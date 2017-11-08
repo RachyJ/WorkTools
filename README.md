@@ -1,5 +1,4 @@
-# domainchecker
-Get the domain name of a company name
+# Python tools for work
 
 ## removecsvduplicate.py
 
