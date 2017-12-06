@@ -23,6 +23,12 @@ if columns2delete.issubset(df.columns):
 order_columns = set(['Pay Date'])
 if order_columns.issubset(df.columns):
     print('this is the order report')
+    print(df.columns.get_loc('Ticket No.')) # delete from ticket no. column
+    print(len(df.columns)) # get total column number
+    start_column = df.columns.get_loc('Ticket No.')
+    end_column = len(df.columns)
+    col = list(df.columns)[start_column:end_column]
+    df.drop(col, axis=1, inplace=True)
 
 with ExcelWriter(output_file) as ew:
     df.to_excel(ew, index=False)  # index=False no extra index column
