@@ -10,7 +10,7 @@ output_file = infile.split('.')[0] + '.xlsx'  # use the same file name as output
 df1 = pd.read_csv(infile, encoding='ISO-8859-1') 
 df = pd.DataFrame(df1)
 df = df[~df['Email'].str.contains('@dynamsoft.com', na=False)] # filter out the records from dynamsoft 
-df.drop_duplicates(subset=['Email','Product'], inplace=True)  # remove duplicates by email + product; drop duplicates
+df.drop_duplicates(subset=['Email','Product'], inplace=True)  # remove duplicates by email + product
 
 columns2delete = set(['Choose','Delete']) # invalid columns
 if columns2delete.issubset(df.columns):
